@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "../store/useStore";
 import { cn } from "../utils/helpers";
+import logo from "../assets/logo.png";
 
 const Sidebar: React.FC = () => {
   const projects = useStore((state) => state.projects);
@@ -23,8 +24,8 @@ const Sidebar: React.FC = () => {
   };
   return (
     <div className="w-72 h-full p-5 border-r border-gray-200 bg-gradient-to-b from-white to-blue-50 shadow-lg">
-      <h2 className="text-2xl font-extrabold text-blue-700 mb-6">
-        📁 My Projects
+      <h2 className="text-2xl flex font-bold mt-5 text-blue-800 mb-6 text-center item center">
+        <img src={logo} alt="Logo" className="w-12" /> <p className="pl-2"> All Projects</p>
       </h2>
 
       <div className="space-y-2">
