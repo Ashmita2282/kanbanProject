@@ -1,54 +1,91 @@
-# React + TypeScript + Vite
+# Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based Kanban Board application built with React, Zustand, and Tailwind CSS for task and project management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Project Management**
+  - Create, rename, delete projects
+  - Sidebar navigation with current project highlighting
+  - Persistent storage via LocalStorage
 
-## Expanding the ESLint configuration
+- **Task Management**
+  - Add tasks with title, description, and optional deadline
+  - Edit and delete tasks
+  - View created date and overdue indication
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Task Status Columns**
+  - To-Do, In-Progress, Done columns
+  - Drag-and-drop tasks between columns (@hello-pangea/dnd)
+  - Manual "Move to ..." buttons for direct status changes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Responsive Design**
+  - Adaptive grid layout
+  - Clean UI with hover effects, shadows, and animations
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or newer)
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd <project_folder>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Start the development server:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) to view in the browser.
+
+### Production Build
+
+Build the application for production:
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Preview the production build:
+```bash
+npm run preview
 ```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Sidebar.tsx
+│   ├── Board.tsx
+│   └── ...
+├── store/
+│   └── useStore.ts
+├── types/
+│   └── index.ts
+├── utils/
+│   └── helpers.ts
+├── App.tsx
+└── main.tsx
+```
+
+## Customization
+
+- **Theme Toggle**: Light and dark mode support via Tailwind `dark:` classes
+- **Styling**: Utility-first Tailwind for rapid UI development
+
+## License
+
+This project is licensed under the MIT License.
